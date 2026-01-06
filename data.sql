@@ -26,8 +26,7 @@ INSERT INTO ROBOTS (model_name, factory_id, quantity, created_at) VALUES ('Alpha
 INSERT INTO ROBOTS (model_name, factory_id, quantity, created_at) VALUES ('Mega Man', 2, 22, '2020-02-01');
 
 -- E. Insertion des Pièces (Basé sur fournisseurs.csv)
--- On simule les quantités livrées basées sur la production des robots
-INSERT INTO SPARE_PARTS (name, supplier_id, quantity_delivered, robot_model_ref) VALUES ('bras droit', 1, 1500, 'Vital Strider'); -- >1000 pour tester la vue
+INSERT INTO SPARE_PARTS (name, supplier_id, quantity_delivered, robot_model_ref) VALUES ('bras droit', 1, 1500, 'Vital Strider');
 INSERT INTO SPARE_PARTS (name, supplier_id, quantity_delivered, robot_model_ref) VALUES ('bras gauche', 2, 800, 'Vital Strider');
-INSERT INTO SPARE_PARTS (name, supplier_id, quantity_delivered, robot_model_ref) VALUES ('torse', 3, 1200, 'Master Sentinel'); -- >1000 pour tester la vue
+INSERT INTO SPARE_PARTS (name, supplier_id, quantity_delivered, robot_model_ref) VALUES ('torse', 3, 1200, 'Master Sentinel');
 GO

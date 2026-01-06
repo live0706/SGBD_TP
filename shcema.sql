@@ -5,7 +5,7 @@ CREATE TABLE FACTORIES (
     location VARCHAR(100)
 );
 
--- 2. Usine Paris (AVEC la colonne Age) [cite: 36]
+-- 2. Usine Paris (AVEC la colonne Age)
 CREATE TABLE WORKERS_FACTORY_1 (
     id INT IDENTITY(1,1) PRIMARY KEY,
     lastname VARCHAR(100),
@@ -13,17 +13,17 @@ CREATE TABLE WORKERS_FACTORY_1 (
     age INT, 
     start_date DATE,
     end_date DATE,
-    duration_days INT -- Demandé par le Trigger 4
+    duration_days INT 
 );
 
--- 3. Usine Caracas (SANS la colonne Age) [cite: 37]
+-- 3. Usine Caracas (SANS la colonne Age)
 CREATE TABLE WORKERS_FACTORY_2 (
     id INT IDENTITY(1,1) PRIMARY KEY,
     lastname VARCHAR(100),
     firstname VARCHAR(100),
     start_date DATE,
     end_date DATE,
-    duration_days INT -- Demandé par le Trigger 4
+    duration_days INT 
 );
 
 -- 4. Fournisseurs
@@ -37,7 +37,7 @@ CREATE TABLE ROBOTS (
     id INT IDENTITY(1,1) PRIMARY KEY,
     model_name VARCHAR(100),
     factory_id INT FOREIGN KEY REFERENCES FACTORIES(id),
-    quantity INT, -- Ajouté pour coller à vos données Excel
+    quantity INT,
     created_at DATETIME DEFAULT GETDATE()
 );
 
@@ -47,7 +47,7 @@ CREATE TABLE SPARE_PARTS (
     name VARCHAR(100),
     supplier_id INT FOREIGN KEY REFERENCES SUPPLIERS(id),
     quantity_delivered INT,
-    robot_model_ref VARCHAR(100) -- Pour lier au modèle de robot
+    robot_model_ref VARCHAR(100) 
 );
 
 -- 7. Audit (Requis par Trigger 2)
